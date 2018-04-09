@@ -170,6 +170,12 @@ class chatBotAPI
         return $json;
     }
 
+    public function getResults(){
+        $excelente = getNumberResult($this->con, "Excelente");
+        $bueno = getNumberResult($this->con, "Bueno");
+        $regular = getNumberResult($this->con, "Regular");
 
+        return array($excelente, $bueno, $regular );
+    }
 
 }

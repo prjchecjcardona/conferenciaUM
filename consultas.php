@@ -42,3 +42,17 @@ function saveInfo($con, $data){
     return $result;
 }
 
+function getNumberResult($con, $type){
+    $numresultados = array();
+    $filter = ['CALIFICACION' => $type];
+    $query = new MongoDB\Driver\Query($filter);
+    $result = $con->executeQuery($GLOBALS['dbname'] . ".calificacion", $query);
+    $encontrado = $result->toArray();
+
+    foreach ($encontrado as $key => $value) {
+        array_push($numresultados, $value);
+    }
+
+    return count($numresultados);
+}
+
