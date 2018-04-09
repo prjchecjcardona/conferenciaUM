@@ -69,7 +69,7 @@ foreach ($contexts as $i => $con) {
     }
 
     switch ($con['name']) {
-        case 'calificacion':
+        case 'in_calificacion':
             $response = $api->setCalificacion($email, $calificacion);
             break;
         case 'dato_semestre':
