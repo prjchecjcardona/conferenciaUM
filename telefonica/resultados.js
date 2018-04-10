@@ -3,7 +3,7 @@ function initChart(data, id){
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Excelente", "Bueno", "Regular"],
+            labels: ["Excelente", "Bueno", "Puede mejorar"],
             datasets: [{
                 label: id,
                 data: data,
