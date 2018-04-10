@@ -9,19 +9,44 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
      <!-- Compiled and minified CSS -->
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+     <style>
+         div.main{
+             padding-bottom: 20px;
+             padding-top: 20px;
+             min-height: 500px;
+         }
+         #logistica{
+             padding-top: 30px;
+         }
+         @media only screen and (max-width: 600px) {
+            div.main{
+                min-height: 380px;
+            }
+        }
+     </style>
 
 </head>
 <body>
     
     <div class="container">
         <h2>Resultados</h2>
-        <div class="row">
-            <div class="col-s12">
-                <canvas id="myChart"></canvas>
+        <div class="row main">
+            <div class="col s12 m6">
+                <canvas id="conferencias"></canvas>
+            </div>
+            <div class="col s12 m6">
+                <canvas id="logistica"></canvas>
             </div>
         </div>
+        <footer>
+            <div class="row">
+                <div class="col s12">
+                    <h6>Powered by CIAD</h6>
+                    <p><b>Contáctanos:</b> ciad@umanizales.edu.co</p>
+                </div>
+            </div>
+        </footer>
     </div>
-
 
 
      <!-- Compiled and minified JavaScript -->

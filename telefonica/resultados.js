@@ -1,11 +1,11 @@
-function initChart(data){
-    var ctx = document.getElementById("myChart");
+function initChart(data, id){
+    var ctx = document.getElementById(id);
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ["Excelente", "Bueno", "Regular"],
             datasets: [{
-                label: '# de Clificaciones',
+                label: id,
                 data: data,
                 backgroundColor: [
                     'rgba(75, 192, 192, 0.2)',
@@ -35,6 +35,7 @@ function initChart(data){
 
 $(function(){
     $.post('resultados.php',function(data){
-        initChart(data);
+        initChart(data.conferencias, "conferencias");
+        initChart(data.logistica, "logistica");
     }, "json")
 })

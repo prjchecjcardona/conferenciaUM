@@ -109,10 +109,10 @@ class chatBotAPI
     }
 
 
-    public function getResults(){
-        $excelente = getNumberResult($this->con, "Excelente");
-        $bueno = getNumberResult($this->con, "Bueno");
-        $regular = getNumberResult($this->con, "Regular");
+    public function getResults($tipo){
+        $excelente = getNumberResult($this->con, "Excelente", $tipo);
+        $bueno = getNumberResult($this->con, "Bueno", $tipo);
+        $regular = getNumberResult($this->con, "Regular", $tipo);
 
         return array($excelente, $bueno, $regular );
     }

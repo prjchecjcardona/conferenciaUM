@@ -42,11 +42,11 @@ function saveInfo($con, $data){
     return $result;
 }
 
-function getNumberResult($con, $type){
+function getNumberResult($con, $type, $tipo){
     $numresultados = array();
     $filter = ['CALIFICACION' => $type];
     $query = new MongoDB\Driver\Query($filter);
-    $result = $con->executeQuery($GLOBALS['dbname'] . ".calificacion", $query);
+    $result = $con->executeQuery($GLOBALS['dbname'] . ".". $tipo, $query);
     $encontrado = $result->toArray();
 
     foreach ($encontrado as $key => $value) {

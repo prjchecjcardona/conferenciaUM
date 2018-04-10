@@ -5,9 +5,13 @@ require './lib.php';
 //Instancia de la API
 $api = new chatBotApi();
 
-$resultados = $api->getResults();
+$resultadosConferencias = $api->getResults("telefonica_cal_conferencias");
+$resultadosLogistica = $api->getResults("telefonica_cal_logistica");
 
-echo json_encode($resultados);
+echo json_encode(array(
+    'conferencias' => $resultadosConferencias,
+    'logistica' => $resultadosLogistica
+));
 
 
 ?>
